@@ -1,3 +1,4 @@
+import { Songs } from '../../models/songs'
 import connection from './connection'
 
 const db = connection

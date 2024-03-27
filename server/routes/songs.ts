@@ -7,7 +7,7 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const songs = await db.getSongs()
-    res.json(todos)
+    res.json(songs)
   } catch (error) {
     console.error(`Database error: ${error}`)
     res.sendStatus(500)
