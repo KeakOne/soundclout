@@ -1,8 +1,8 @@
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
 import { Songs } from '../../models/songs.ts'
 import * as api from '../apis/apiClient.ts'
-// import { countdown } from '../../node_modules/countdown/countdown.js'
 import { ChangeEvent, FormEvent, useState } from 'react'
+import Countdown from './Countdown.tsx'
 export default function Song() {
   const [newSongs, setNewSongs] = useState(['', '', ''])
 
@@ -51,7 +51,6 @@ export default function Song() {
           </div>
           <form onSubmit={(event) => handleSubmit(event, index)}>
             <label htmlFor="url">Url:</label>
-            {/* <p>{countdown(new Date(2000, 0, 1)).toString()}</p> */}
             <input
               value={newSongs[index]}
               onChange={(event) => handleChange(event, index)}
@@ -59,6 +58,7 @@ export default function Song() {
             />
             <button>Submit</button>
           </form>
+          <Countdown />
         </div>
       ))}
       <p></p>
